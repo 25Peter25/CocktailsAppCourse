@@ -1,4 +1,4 @@
-package com.peter.PeterCocktails;
+package com.peter.peterCocktails;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

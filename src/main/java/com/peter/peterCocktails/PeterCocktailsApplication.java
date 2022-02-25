@@ -1,4 +1,4 @@
-package com.peter.PeterCocktails;
+package com.peter.peterCocktails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

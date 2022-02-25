@@ -1,4 +1,4 @@
-package com.peter.PeterCocktails;
+package com.peter.peterCocktails;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
