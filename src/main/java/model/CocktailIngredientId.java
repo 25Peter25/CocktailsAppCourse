@@ -5,13 +5,19 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 @Embeddable //anotacia ktora nevytvara Entitu, ale deklaruje ze do nej budu vlozene-embedded ine entity
 public class CocktailIngredientId implements Serializable{
+	
+	private static final long serialVersionUID = -952995699650082188L;
 
-	@Column(name = "cocktail_id")
+	@Column(name = "cocktailId")
 	private Long cocktailId;
 	
-	@Column(name = "ingredient_id")
+	@Column(name = "ingredientId")
 	private Long ingredientId;
 
 
@@ -24,6 +30,40 @@ public class CocktailIngredientId implements Serializable{
 	public CocktailIngredientId() {
 		super();
 	}
+
+	public Long getCocktailId() {
+		return cocktailId;
+	}
+
+	public void setCocktailId(Long cocktailId) {
+		this.cocktailId = cocktailId;
+	}
+
+	public Long getIngredientId() {
+		return ingredientId;
+	}
+
+	public void setIngredientId(Long ingredientId) {
+		this.ingredientId = ingredientId;
+	}
+	
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj);
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+	
+	
+	
 
 //a
 	

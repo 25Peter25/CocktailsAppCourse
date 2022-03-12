@@ -10,10 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 @Entity
 @Table(name = "t_cocktails",schema = "co") //namapovanie na triedy na tabulku t_cocktails
 public class TCocktail implements Serializable{
+	
+	private static final long serialVersionUID = 4807382191550107336L;
 
 	//nazvy premenych podla stlpcov v tabulke
 	
@@ -65,6 +71,22 @@ public class TCocktail implements Serializable{
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return EqualsBuilder.reflectionEquals(this, obj);
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+	
 	
 	
 	

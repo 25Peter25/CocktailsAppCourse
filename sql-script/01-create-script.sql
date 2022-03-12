@@ -28,7 +28,7 @@ ALTER TABLE IF EXISTS co.ingredients
 (
     cocktail_id bigserial NOT NULL,
     name character varying(50) NOT NULL,
-    url character varying(50) NOT NULL,
+    url character varying(1000) NOT NULL,
     PRIMARY KEY (cocktail_id)
 );
 ALTER TABLE IF EXISTS co.t_cocktails
