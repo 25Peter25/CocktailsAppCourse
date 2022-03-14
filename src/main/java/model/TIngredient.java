@@ -26,7 +26,7 @@ public class TIngredient implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "t_ingredients_seq")
 	@SequenceGenerator(name = "t_ingredients_seq", sequenceName = "co.t_ingredients_ingredients_id_seq", initialValue=0, allocationSize = 1)
 	@Column (name = "ingredient_id", nullable = false)
-	private Long cocktail_id;
+	private Long ingredientId;
 	
 	@Column (name = "name", nullable = false)
 	private String name;
@@ -37,13 +37,13 @@ public class TIngredient implements Serializable {
 	}
 
 
-	public Long getCocktail_id() {
-		return cocktail_id;
+	public Long getIngredientId() {
+		return ingredientId;
 	}
 
 
-	public void setCocktail_id(Long cocktail_id) {
-		this.cocktail_id = cocktail_id;
+	public void setIngredientId(Long ingredientId) {
+		this.ingredientId = ingredientId;
 	}
 
 
