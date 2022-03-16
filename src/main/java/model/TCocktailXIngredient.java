@@ -23,12 +23,12 @@ public class TCocktailXIngredient implements Serializable{
 	private CocktailIngredientId id;
 	
 	@ManyToOne
-	@MapsId("cocktail_id")
+	@MapsId("cocktailId")
 	@JoinColumn(name = "cocktail_id", nullable = false)
 	private TCocktail cocktail;
 	
 	@ManyToOne
-	@MapsId("ingredient_id")
+	@MapsId("ingredientId")
 	@JoinColumn(name = "ingredient_id", nullable = false)
 	private TIngredient ingredient;
 
