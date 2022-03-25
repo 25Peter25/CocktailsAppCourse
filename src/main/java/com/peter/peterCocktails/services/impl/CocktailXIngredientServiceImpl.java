@@ -1,4 +1,4 @@
-package service.impl;
+package com.peter.peterCocktails.services.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.TCocktailXIngredient;
-import repository.ICocktailXIngredientRepository;
-import service.ICocktailXIngredientService;
+import com.peter.peterCocktails.models.TCocktailXIngredient;
+import com.peter.peterCocktails.repositories.ICocktailXIngredientRepository;
+import com.peter.peterCocktails.services.ICocktailXIngredientService;
 
 @Service
 public class CocktailXIngredientServiceImpl implements ICocktailXIngredientService{

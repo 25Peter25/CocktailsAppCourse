@@ -1,8 +1,8 @@
-package service;
+package com.peter.peterCocktails.services;
 
 import java.util.List;
 
-import model.TCocktailXIngredient;
+import com.peter.peterCocktails.models.TCocktailXIngredient;
 
 public interface ICocktailXIngredientService {
 	

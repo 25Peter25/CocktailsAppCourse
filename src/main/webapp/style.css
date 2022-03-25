@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+#search {
+	margin-top: 10px; /* outside */
+	margin-bottom: 10px; /* outside */
+	margin-left: 0px; /* outside */
+	margin-right: 0px; /* outside */
+	background-color: transparent;
+	display: block;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #121212;
+	border: 1px solid #50f04a;
+	font-weight: bold;
+	border-radius: 5px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.button {
+	margin-top: 10px; /* outside */
+	margin-bottom: 10px; /* outside */
+	margin-left: 0px; /* outside */
+	margin-right: 0px; /* outside */
+	background-color: transparent;
+	display: block;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	color: #121212;
+	border: 1px solid #50f04a;
+	border-radius: 5px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.ingredient-item {
+	margin: 1px; /* outside */
+	display: inline-block;
+	white-space: nowrap;
+	width: 160px;
+	height: 25px;
+	overflow: hidden; /* hide overflowing text */
+	text-overflow: ellipsis; /* show ... */
+	cursor: default;
+	border-radius: 5px;
+	color: #121212; /* font color */
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+}
+
+
+.lc-body {
+	background-image: url("kobby-mendez-xBFTjrMIC0c-unsplash.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+	color: white;
+}
+
+.thText {
+	color: #121212;
+	font-size: 1.25em;
+}
+
+.resultItem {
+	color: #121212;
+	font-weight: bold;
+}
+
+/* unvisited link */
+a:link {
+  color: #121212;
+}
+
+/* visited link */
+a:visited {
+  color: #121212;
+}
+
+/* mouse over link */
+a:hover {
+  color: #121212;
+}
+
+/* selected link */
+a:active {
+  color: #121212;
+}

@@ -1,4 +1,4 @@
-package model;
+package com.peter.peterCocktails.models;
 
 import java.io.Serializable;
 
@@ -17,14 +17,14 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @Entity
-@Table(name = "t_ingredients", schema = "co")
+@Table(name = "ingredients", schema = "co")
 public class TIngredient implements Serializable {
 	
 	private static final long serialVersionUID = -8286523664238684462L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "t_ingredients_seq")
-	@SequenceGenerator(name = "t_ingredients_seq", sequenceName = "co.t_ingredients_ingredients_id_seq", initialValue=0, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ingredients_seq")
+	@SequenceGenerator(name = "ingredients_seq", sequenceName = "co.ingredients_ingredients_id_seq", initialValue=0, allocationSize = 1)
 	@Column (name = "ingredient_id", nullable = false)
 	private Long ingredientId;
 	

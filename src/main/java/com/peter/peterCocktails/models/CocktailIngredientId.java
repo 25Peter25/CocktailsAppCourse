@@ -1,4 +1,4 @@
-package model;
+package com.peter.peterCocktails.models;
 
 import java.io.Serializable;
 
