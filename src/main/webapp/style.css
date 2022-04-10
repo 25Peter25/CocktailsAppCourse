@@ -1,21 +1,21 @@
 @charset "UTF-8";
 
 #search {
-	margin-top: 10px; /* outside */
-	margin-bottom: 10px; /* outside */
+	margin-top: 10px; /* outside */ /*odsadenie z vruchu/spodu/zlava */
+	margin-bottom: 10px; /* outside */ 
 	margin-left: 0px; /* outside */
 	margin-right: 0px; /* outside */
 	background-color: transparent;
-	display: block;
-	height: calc(1.5em + .75rem + 2px);
-	padding: .375rem .75rem;
+	display: block; /*zarovnane v bloku - element sa natiahne bud na cely riadok, alebo na 100% svojho rodica (napr li je v lu tak lu je rodic) */
+	height: calc(1.5em + .75rem + 2px); /* kolko ma zaberat vyska */
+	padding: .375rem .75rem; /* rozostup medzi textom a ramom buttona */ 
 	font-size: 1rem;
-	line-height: 1.5;
-	color: #121212;
-	border: 1px solid #50f04a;
-	font-weight: bold;
-	border-radius: 5px;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	line-height: 1.5; /*velkost riadku*/
+	color: #121212; /*farba pisma */
+	border: 1px solid #50f04a; /*ram jeho hrubka, typ - solid, farba*/
+	font-weight: bold; /*tucny fond */
+	border-radius: 5px; /* zaoblene rohy ramu */
+	font-family: "Comic Sans MS", cursive, sans-serif; /*typ pisma */
 }
 
 .button {
@@ -52,9 +52,9 @@
 
 .lc-body {
 	background-image: url("kobby-mendez-xBFTjrMIC0c-unsplash.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-  	background-attachment: fixed;
+	background-size: cover; /*na cleu obrazovku*/
+	background-repeat: no-repeat; /*nema sa opakovat - inac by ho tam bolo ela dokola...*/
+  	background-attachment: fixed; /* ked skrolujem tak zostava na mieste */
 	color: white;
 }
 

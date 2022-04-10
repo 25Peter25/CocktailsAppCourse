@@ -2,33 +2,49 @@
 <html lang="sk" xmlns:th="http://www.thymeleaf.org">
 <head>
 
-<meta charset="UTF-8">
-<title>Ingredients</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="icon" type="image/png" href="16x16.png" sizes="16x16" /> 
+<meta charset="UTF-8"> <!-- mekcene... -->
+<title>Ingredients</title> <!-- napis vo web ikonke -->
+<link rel="stylesheet" href="style.css"> <!-- ak pouzivam css musim pridat link -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+<!-- bootstrap template-framework, kde su prednastavenia formatovania stranky. Je CSS framework -->
+<link rel="icon" type="image/png" href="16x16.png" sizes="16x16" />  <!-- ikonka vo webe vedla napisu Ingredients (title) -->
 
 </head>
-<body class="lc-body" onunload=uncheck() >
-	<div class="container-fluid">
-		<div class="row h-25">&nbsp;</div>
-
+<body class="lc-body" onunload=uncheck() > <!-- v body su veci co maju byt na stranke -->
+	<div class="container-fluid"> <!-- div su jednotlive sekcie s nepribuznym obsahom. Section to co div len s pribuznym obsahom. Vacsinou div -->
+	<!-- v class urcujem formatovanie. Container-fluid je nazov classu, ktory je potom v css dane vlastnosti ALEBO v bootstrape-->
+		<div class="row h-25">&nbsp;</div> <!-- row h-25 class css... &nbsp je pridanie specialneho znaku, toto je nezlomitelna medzera... -->
 		<div class="row h-50">
 			<div class="col-1">&nbsp;</div>
 			<div class="col-10">
 				<h1 style="text-align: center; color: #4D392F;">FIND COCKTAILS YOU CAN MAKE</h1>
+				<!-- h... su nadpisy. Od h1 po h4/5... h1 najvacsi -->
+				<!-- style moze byt aj v css. text-aling: center = zarovnanie na stred, cierna, a text-->
 				<h3 style="text-align: center; color: #C996EB;">mark the ingredients and press search for the result</h3>
 				<form action="#" th:action="@{/result}" th:object="${ingredientsFormModel}" method="post">
+				<!-- form-formular (vyhladavacie pole). za action je link, kam sa udaje odoslu. Ak sa neposielaju nikam tak hastag -->
+				<!-- action prepne sa na stranku result... -->
+				<!-- th:object ?????? -->
+				<!-- method moze byt get alebo post. Post-posiela udaje get dostava? -->
 					<div class="form-group">
 						<div class="input-group-append">
 							<input class="form-control" id="search" placeholder="Filter">
+							<!-- input-riadok kam sa pise. id-pomenovanie ako class ale len pre 1 vec mozem priradit. -->
+							<!-- co ma byt v inpute napisane ako default... -->
 							<button class="button" type="submit">Search</button>
+							<!-- button - typ potvrdzovaci a Search jeho text... -->
 						</div>
 						<div class="form-check form-check-inline">
 							<ul class="list-inline" style="list-style-type: none;">
+							<!-- ul=neusporiadany zoznam. Asi zoznam ingrediencii -->
 								<li class="ingredient-item" th:id="${ingredient.ingredientId}" th:each="ingredient : ${ingredients}">
+								<!-- li-polozka zoznamu. Napr. jedna ingrediencia. Popisane v css -->
+								<!-- id - v JS -->
 								<input type="checkbox" th:value="${ingredient.ingredientId}" th:field="*{ingredientIds}" style="display: none;"id="checkAll" >
+								<!-- tento inpu je na zaklikavanie ingrediencii. th:value-zakliknuty objekt -->
+								<!-- th:field Asi pole viacerych ingrediencii zakliknutych. Style-input sa nema zobrazovat checkbox okienko.dane id... -->
 								<span th:text="${ingredient.name}"></span>
+								<!-- span - po zakliknuti sa vyznaci dana ingrediencia a v css/js sa potom spravi formatovanie... -->
 								</li>
 							</ul>
 						</div>
@@ -40,38 +56,46 @@
 		<div class="row h-25">&nbsp;</div>
 
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<!-- v scriptoch su kniznice co som pouzival. Alebo ak pouzivam viac javascriptov tak odkaz na neho napr. v priecinku... Alebo do neho rovno vpisat js kratky kod. -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> //SPOZNAVA JQUERY KOD V JS
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script>
+	//JS JE PISANY V JQUERY:
 		$("#search").keyup(function() {
+			//V JS a CSS ak editujem class tak pred nazov classu . a ak id tak hastag
+			//Tu na id search (keyup-ked napisem pismeno sa nieco udeje (zacnu sa filtrovat napoje - spusti sa funkcia:))
 			var searchText = $("#search").val();
-
-			$(".ingredient-item").each(function(i) { // all ingredients iterator
+			//do premennej searchText sa vytiahne hodnota search cize to co vpisem do pola
+			$(".ingredient-item").each(function(i) { // all ingredients iterator - VSETKY Z DATABAZY
+				//Iterujem kazdu polozku ingredient-item
 				var ingredientName = $(this).text(); 
-
+				//do premennej sa ulozi nazov danej ingrediencie z databazy
 				if (!(searchText.trim() == '')) { // if searched text isn´t empty
-					if (ingredientName.includes(searchText)) {
-						$(this).css("display", "inline-block"); // show ingredient
+					if (ingredientName.includes(searchText)) { //Ak nazov obsahuje zadane pismena 
+						$(this).css("display", "inline-block"); // show ingredient tak sa zobrazi dana ingrediencia
 					} else {
 						
-						var prop = $(this).find("input").prop("checked"); // chceckbox value
+						var prop = $(this).find("input").prop("checked"); // chceckbox value - ???Neviem presne
 
 						if (prop == false) { // if checkbox isn´t checked
 							$(this).css("display", "none"); // hide ingredient
 						}
+						//ak nenajde tak nic neukaze.....
 					}
 				} else {
-					$(this).css("display", "inline-block"); // show ingredient
+					$(this).css("display", "inline-block"); // show ingredient - ukaz vsetky ingrediencie ak som nezadal nic do hladacika
 				}
 				console.log('from keyup');
 			});
 		});
 
 		$(".ingredient-item").click(function() {
+			//ak kliknem na danu ingredienciu tak :
 			var prop = $(this).find("input").prop("checked");
-
-			if (prop == true) { // if checked
+			//po kliknuti na ingredienciu ulozi do premennej prop (zakliknuta ingrediencia = checked)
+			if (prop == true) { // if checked 
+				//najde zakliknutu ingredienciu, ak je jej checked vlastnost false, tak ju da transparent, ak je checked true tak podfarbi...
 				$(this).find("input").prop("checked", false);
 				$(this).css('background-color', 'transparent');
 			} else {
